@@ -11,6 +11,9 @@ from tensorflow.keras.preprocessing import image
 # Initialize FastAPI app
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Skin Disease API is running!"}
 # Allow cross-origin requests from the frontend (React)
 app.add_middleware(
     CORSMiddleware,
