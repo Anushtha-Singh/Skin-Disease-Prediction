@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import UploadFile, File
@@ -20,7 +21,15 @@ app.add_middleware(
 )
 
 # Load the trained model
-model = load_model("skin_disease_model.keras")
+#model = load_model("skin_disease_model.keras")
+model_path = os.getenv("MODEL_PATH", "Skin-Disease-API/skin_disease_model.keras")
+
+if os.path.exists(model_path):
+    print(f"✅ Model file found at: {model_path}")
+else:
+    print(f"❌ Model file missing: {model_path}")
+
+model = load_model(model_path)
 
 # Define class labels (Make sure these match your training labels)
 class_labels = ["label1", "label2", "label3", "..."]  # Replace with actual labels
