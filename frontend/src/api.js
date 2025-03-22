@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000/predict/";  // FastAPI backend URL
-
+//const API_URL = "http://127.0.0.1:8000/predict/";  // FastAPI backend URL
+const API_URL = "https://skin-disease-prediction-lfhq.onrender.com/predict";
 export const uploadImage = async (file) => {
   const formData = new FormData();
   formData.append("file", file);
