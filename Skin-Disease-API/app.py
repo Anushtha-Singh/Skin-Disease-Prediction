@@ -19,10 +19,10 @@ def read_root():
 # Allow cross-origin requests
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=["*"],  # Allow all domains (for testing)
     allow_credentials=True,
-    allow_methods=["GET", "POST"],  
-    allow_headers=["*"],  
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
 )
 
 # Load the trained model
