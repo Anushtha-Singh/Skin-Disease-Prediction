@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Pytest cache
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IDE / editor folders
+.vscode/
+.idea/
+
+# Local environment variables
+.env
+.env.*
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Static files cache
+static/__pycache__/
+
+# MacOS files
+.DS_Store
+
+# **Do NOT ignore ML model files - push them!**
+# So no lines for *.pt, *.pkl, etc.
+
+dataset/
+
+node_modules/

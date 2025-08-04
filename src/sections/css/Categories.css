@@ -1,0 +1,77 @@
+/* src/sections/Categories.css */
+#categories {
+    background-color: white;
+  }
+  
+  .categories-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .categories-description {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .category-card {
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .category-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+  
+  .learn-more {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .arrow-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover .arrow-icon {
+    transform: translateX(5px);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .categories-grid {
+      grid-template-columns: 1fr;
+    }
+  }

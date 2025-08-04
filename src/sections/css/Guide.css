@@ -1,0 +1,96 @@
+/* src/sections/Guide.css */
+#guide {
+  background-color: #f5f7fa;
+  padding: 40px 0;
+   margin: 0; 
+}
+
+.guide-container {
+  width: 95%; /* Stretch more across screen */
+  margin: 0 auto;
+  padding: 0; /* Remove default horizontal padding */
+}
+
+.guide-card-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 30px;
+  flex-wrap: wrap; /* Corrected this */
+}
+
+.guide-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex: 1 1 450px;
+  min-width: 400px;
+  max-width: 700px;
+}
+
+.guide-image {
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.guide-image img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #f0f0f0;
+}
+
+.guide-info {
+  padding: 30px;
+  flex: 1;
+}
+
+.guide-info h3 {
+  color: #333;
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.guide-title {
+  color: #6c63ff;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.guide-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.guide-quote {
+  border-left: 3px solid #6c63ff;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.guide-quote blockquote {
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .guide-card {
+    flex-direction: column;
+  }
+
+  .guide-image {
+    padding: 30px;
+    min-width: auto;
+  }
+
+  .guide-info {
+    padding: 0 30px 30px;
+  }
+}
