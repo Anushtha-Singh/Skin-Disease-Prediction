@@ -14,7 +14,7 @@ origins = [
     "http://localhost:3000",  # React dev server URL (change if yours is different)
     "http://localhost",
     "http://127.0.0.1",
-    "https://your-vercel-domain.vercel.app",
+    "https://derma-skin-scan.vercel.app",
 ]
 
 app.add_middleware(
