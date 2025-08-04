@@ -80,7 +80,7 @@ const Upload = () => {
       const blob = await res.blob();
       formData.append("file", blob, "image.jpg");
 
-      const response = await fetch("https://derma-skin-scan-backend.onrender.com", {
+      const response = await fetch("https://derma-skin-scan-backend.onrender.com/predict", {
         method: "POST",
         body: formData,
       });
