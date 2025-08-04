@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# DermaScan – Skin Disease Detection Using AI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DermaScan is an AI-powered web application that helps users analyze skin conditions through image uploads. It uses deep learning to classify skin diseases and distinguish skin vs non-skin images. The system consists of a React frontend and a FastAPI backend deployed on Vercel and Render, respectively.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Detects 6 types of common skin conditions.
+- Upload or capture images via camera.
+- Shows disease name, confidence score, and class-wise probabilities.
+- Fully deployed online:
+  - Frontend: [Live Site](https://derma-skin-scan.vercel.app)
+  - Backend: [Render Backend](https://derma-skin-scan-backend.onrender.com)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Disease Categories
 
-### `npm test`
+1. Acne and Rosacea  
+2. Fungal Infections (Ringworm, Candidiasis)  
+3. Melanoma, Nevi, and Moles  
+4. Eczema  
+5. Atopic Dermatitis  
+6. Seborrheic Keratoses and Benign Tumors
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Frontend     | Backend       | ML/AI        |
+|--------------|---------------|--------------|
+| React.js     | FastAPI       | VGG19 (Keras)|
+| HTML + CSS   | Uvicorn Server| Scikit-learn |
+| Vercel       | Render        | OpenCV       |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How It Works
 
-### `npm run eject`
+1. Upload or capture a skin image.  
+2. App checks if the image is of skin.  
+3. If yes, predicts the disease using a trained deep learning model.  
+4. Displays the result and confidence level.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started (for Local Setup)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+cd sdp
+npm install
+npm start
 
-## Learn More
+### Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd server
+pip install -r requirements.txt
+uvicorn app:app --reload
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Model Details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Skin vs Non-Skin Classifier:** Classical ML model using SVC with flattened pixel input.  
+- **Disease Classifier:** VGG19-based feature extractor + custom dense layers trained on 6 skin disease categories.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## CORS Configuration
 
-### Making a Progressive Web App
+The FastAPI backend uses CORSMiddleware to allow cross-origin requests from:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- http://localhost:3000  
+- https://derma-skin-scan.vercel.app  
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Sample Result
 
-### Deployment
+| Image    | Prediction | Confidence |
+|----------|------------|------------|
+| Eczema   | 92.4%      |  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Service   | URL                                      |
+|-----------|------------------------------------------|
+| Frontend  | https://derma-skin-scan.vercel.app       |
+| Backend   | https://derma-skin-scan-backend.onrender.com |
+
+---
+
+## Developed by
+
+Anushtha Singh Kushwah  
+Mohan Manjhi
+Harshita Bamaniya
+Shivani Choudhary
+Shreyash Tiwari
